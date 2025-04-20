@@ -4,7 +4,7 @@ import Loginform from "./components/Loginform"
 import { Routes, Route } from 'react-router'
 import Visualizer from "./components/Visualizer"
 import { useState } from "react"
-
+import Chat from "./page/chat"
 
 function App() {
 const [algorithm, setAlgorithm] = useState([]);
@@ -17,6 +17,7 @@ const [algorithm, setAlgorithm] = useState([]);
         <Route path='/' element={<Home setAlgorithm={setAlgorithm}/>} />
         <Route path='/Visualizer' element={<Visualizer algorithm={algorithm} setAlgorithm={setAlgorithm} />} />
         <Route path='/Login' element={<Loginform />} />
+        <Route path='/Chat' element={<Chat />} />
       </Routes>
     </div>
   )

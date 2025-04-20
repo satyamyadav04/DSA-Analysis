@@ -55,7 +55,7 @@ function Navbar({ algorithm, setAlgorithm }) {
 
   const handleAlgorithmSelection = (algokey) => {
     setAlgorithm([algokey]);
-    navigate('/Visualizer')
+    navigate('/Chatbot')
     setShowSearch(false);
     setSearchQuery("");
   };
@@ -79,6 +79,11 @@ function Navbar({ algorithm, setAlgorithm }) {
               <NavLink className="flex items-center hover:text-blue-600 " to="/"><House />&nbsp;<span>Home</span></NavLink>
               <label ref={labelRef} htmlFor="search1" className="flex items-center cursor-pointer hover:text-blue-600" onClick={() => setShowSearch(!showSearch)}><Search />&nbsp;<span>Search</span></label>
               <NavLink className="flex items-center hover:text-blue-600 " to="/Visualizer"><Activity />&nbsp;<span>Visualizer</span></NavLink>
+            </div>
+            <div className="flex gap-10 rounded-md text-[15px]">
+              {/* <NavLink className="flex items-center hover:text-blue-600 " to="/"><House />&nbsp;<span>Home</span></NavLink>
+              <label ref={labelRef} htmlFor="search1" className="flex items-center cursor-pointer hover:text-blue-600" onClick={() => setShowSearch(!showSearch)}><Search />&nbsp;<span>Search</span></label> */}
+              <NavLink className="flex items-center hover:text-blue-600 " to="/Chat"><Activity />&nbsp;<span>Chatbot</span></NavLink>
             </div>
 
             <NavLink className="rounded-md p-1 border text-[15px] flex items-center text-blue-500 hover:text-blue-400" to="/Login"><span>Login</span>&nbsp;<LogIn /></NavLink>
@@ -128,6 +133,7 @@ function Navbar({ algorithm, setAlgorithm }) {
             <NavLink className="font-bold flex flex-col gap-1 items-center hover:text-blue-600 " to="/"><House /> <span className="text-[12px]">Home</span></NavLink>
             <label htmlFor="search" onClick={() => setShowSearch(!showSearch)} className="font-bold  flex flex-col gap-1 items-center hover:text-blue-600 "><Search /><span className="text-[12px]">Search</span></label>
             <NavLink className="font-bold  flex flex-col gap-1 items-center hover:text-blue-600 " to="/Visualizer"><Activity /> <span className="text-[12px]">Visualizer</span></NavLink>
+            <NavLink className="font-bold  flex flex-col gap-1 items-center hover:text-blue-600 " to="/Chat"><Activity /> <span className="text-[12px]">Chatbot</span></NavLink>
             <NavLink className="font-bold flex flex-col gap-1 items-center hover:text-blue-600 " to="/Login"><LogIn /> <span className="text-[12px]">Login</span></NavLink>
           </motion.div>
 
