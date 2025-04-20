@@ -83,6 +83,7 @@ const Chat = () => {
                     planet of solar <br />
                     system </p>
 
+
                   <i className=' absolute right-3 bottom-3 text-[18px]'><BiPlanet /></i>
                 </div>
 
@@ -111,7 +112,7 @@ const Chat = () => {
               message == "" ? "" : <i className='text-green-500 text-[20px] mr-5 cursor-pointer' onClick={hitRequest}><IoSend /></i>
             }
           </div>
-          <p className='text-[gray] text-[14px] my-4'>AssistMe is developed by Mo. Mahdi Farooqui. this AI use the gemini API for giving the response  </p>
+          <p className='text-[gray] text-[14px] my-4'>AssistMe is a chatbot application. this AI use the gemini API for giving the response  </p>
         </div>
       </div>
     </>
