@@ -4,7 +4,8 @@ import Loginform from "./components/Loginform"
 import { Routes, Route } from 'react-router'
 import Visualizer from "./components/Visualizer"
 import { useState } from "react"
-import Chat from "./page/chat"
+import Chat from "./page/Chat"
+
 
 function App() {
 const [algorithm, setAlgorithm] = useState([]);
