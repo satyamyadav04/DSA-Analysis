@@ -29,6 +29,7 @@ function Loginform() {
           <div className='flex flex-col gap-10 justify-center items-center container m-auto w-[90%]  my-5'>
             <motion.input style={{ border}}  type="text" className='h-[2.5rem] font-semibold outline-none shadow shadow-pink-800 text-gray-500 w-full rounded-md p-4' placeholder='👤 Your Name' />
             <motion.input  style={{ border}}  type="email" className='h-[2.5rem] font-semibold outline-none shadow  shadow-pink-800  text-gray-500 w-full rounded-md p-4' placeholder='✉️ Your Email' />
+            <motion.input  style={{ border}}  type="PassWord" className='h-[2.5rem] font-semibold outline-none shadow  shadow-pink-800  text-gray-500 w-full rounded-md p-4' placeholder='✉️ PassWord' />
             <motion.input  whileTap={{
               scale: 0.8,
               transition: { duration: 1 },
