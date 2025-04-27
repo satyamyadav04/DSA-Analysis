@@ -14,6 +14,8 @@ The DSA Visualizer is an interactive tool designed to help users understand and 
 # 🛠️ Tech Details
 Frontend
 #### <li> Framework: React.js (with functional components & hooks)
+#### <li> Backend: Node.js, Express (For conection Backend to frontend )
+#### <li> DataBase: MongoDB
 #### <li> Styling: Tailwind CSS v4 for a modern and responsive UI
 #### <li> Animations: Framer Motion for smooth algorithm visualizations
 #### Tilt Effect : "react-parallax-tilt"
@@ -40,27 +42,5 @@ Frontend
 # Project Structure
 <img src="public/Screenshot 2025-03-09 235132.png">
 
-# Future Enhancements.
-## 🔹 More Algorithm Support
-Implement Sorting Algorithms
-
-
-#### <li> Searching Algorithms
- Linear Search, Binary Search
-#### <li> Graph Algorithms
-BFS, DFS, Dijkstra’s, Prim’s, Kruskal’s
-#### <li> Dynamic Programming
-Fibonacci, Knapsack, LCS, LIS 
 #### <li> Greedy Algorithms
 Activity Selection, Huffman Coding
-### etc...
-
-
-## 🔹 User Interactivity Improvements
-Enable drag-and-drop support for creating custom graph structures.
-
-## 🔹 Customization & Theming
-Introduce dark mode and custom themes.
-
-## Code Highlighter
-introduce the algo pueodo code highliter 

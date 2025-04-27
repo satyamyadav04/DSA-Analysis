@@ -1,11 +1,12 @@
 import Navbar from "./components/Navbar"
 import Home from "./components/Home"
 import Loginform from "./components/Loginform"
-import { Routes, Route } from 'react-router'
+import { Routes, Route } from 'react-router-dom'
 import Visualizer from "./components/Visualizer"
 import { useState } from "react"
-import Chat from "./page/Chat"
-
+import SignUp from "./components/SignUp"
+//import Chat from "./page/Chat.jsx"
+import Chat from "./components/page/chat"
 
 function App() {
 const [algorithm, setAlgorithm] = useState([]);
@@ -18,10 +19,14 @@ const [algorithm, setAlgorithm] = useState([]);
         <Route path='/' element={<Home setAlgorithm={setAlgorithm}/>} />
         <Route path='/Visualizer' element={<Visualizer algorithm={algorithm} setAlgorithm={setAlgorithm} />} />
         <Route path='/Login' element={<Loginform />} />
+        <Route path='/SignUp' element={<SignUp />} />
         <Route path='/Chat' element={<Chat />} />
       </Routes>
+      
     </div>
   )
 }
 
-export default App
+export default App
+
+

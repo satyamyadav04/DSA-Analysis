@@ -25,12 +25,16 @@ const registerUser = async (req, res) => {
 
     await user.save();
 
-    return res
-      .status(201)
-      .json({ message: "User registered successfully", user });
+    return res.status(201).json({
+      success: "success",
+      message: "User registered successfully",
+      user,
+    });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error: "Internal Server Error" });
+    return res
+      .status(500)
+      .json({ success: "failure", error: "Internal Server Error" });
   }
 };
 
@@ -54,12 +58,16 @@ const Login = async (req, res) => {
       return res.status(401).json({ error: "Invalid credentials" });
     }
 
-    return res
-      .status(200)
-      .json({ message: "User logged in successfully", user: userExist });
+    return res.status(200).json({
+      success: "success",
+      message: "User logged in successfully",
+      user: userExist,
+    });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error: "Internal Server Error" });
+    return res
+      .status(500)
+      .json({ success: "success", error: "Internal Server Error" });
   }
 };
 
