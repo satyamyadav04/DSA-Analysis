@@ -61,7 +61,7 @@ function Navbar({ algorithm, setAlgorithm }) {
 
   const handleAlgorithmSelection = (algokey) => {
     setAlgorithm([algokey]);
-    navigate("/Chatbot");
+    navigate("/Chat");
     setShowSearch(false);
     setSearchQuery("");
   };
@@ -111,17 +111,15 @@ function Navbar({ algorithm, setAlgorithm }) {
                 &nbsp;<span>Visualizer</span>
               </NavLink>
             </div>
-            <div className="flex gap-10 rounded-md text-[15px]">
-              {/* <NavLink className="flex items-center hover:text-blue-600 " to="/"><House />&nbsp;<span>Home</span></NavLink>
-              <label ref={labelRef} htmlFor="search1" className="flex items-center cursor-pointer hover:text-blue-600" onClick={() => setShowSearch(!showSearch)}><Search />&nbsp;<span>Search</span></label> */}
+            {/* <div className="flex gap-10 rounded-md text-[15px]">
               <NavLink
                 className="flex items-center hover:text-blue-600 "
                 to="/Chat"
               >
                 <Activity />
-                &nbsp;<span>Chatbot</span>
+                &nbsp;<span>Chat</span>
               </NavLink>
-            </div>
+            </div> */}
 
             <NavLink
               className="rounded-md p-1 border text-[15px] flex items-center text-blue-500 hover:text-blue-400"
@@ -195,7 +193,7 @@ function Navbar({ algorithm, setAlgorithm }) {
               <Activity /> <span className="text-[12px]">Visualizer</span>
             </NavLink>
             <button onClick={() => navigate("/Chat")}>Ai</button>
-            {/* <NavLink className="font-bold  flex flex-col gap-1 items-center hover:text-blue-600 " to="/Chat"><Activity /> <span className="text-[12px]">Chatbot</span></NavLink> */}
+            {/* <NavLink className="font-bold  flex flex-col gap-1 items-center hover:text-blue-600 " to="/Chat"><Activity /> <span className="text-[12px]">Chat</span></NavLink> */}
             <NavLink
               className="font-bold flex flex-col gap-1 items-center hover:text-blue-600 "
               to="/Login"
@@ -247,4 +245,4 @@ function Navbar({ algorithm, setAlgorithm }) {
   );
 }
 
-export default Navbar;
+export default Navbar;

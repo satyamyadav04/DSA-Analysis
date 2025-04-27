@@ -44,7 +44,7 @@ function Loginform() {
         navigate("/Visualizer");
       }
       if (respones.data.success === "failure") {
-        console.log(Response.data.message);
+        console.log(respones.data.message);
       }
     } catch (error) {
       console.log(error);
@@ -103,4 +103,4 @@ function Loginform() {
   );
 }
 
-export default Loginform;
+export default Loginform;
