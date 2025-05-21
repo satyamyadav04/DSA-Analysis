@@ -11,7 +11,7 @@ app.use(
 );
 
 app.use(express.json());
-app.use("/api/auth/", ApiRoute);
+  app.use("/api/auth/", ApiRoute);
 connect();
 
 app.listen(5000, () => {

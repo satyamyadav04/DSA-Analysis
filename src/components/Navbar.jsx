@@ -9,6 +9,7 @@ import {
   animate,
   easeInOut,
 } from "motion/react";
+// import Infd from "../Infd";
 
 function Navbar({ algorithm, setAlgorithm }) {
   const [showSearch, setShowSearch] = useState(false);
@@ -111,7 +112,7 @@ function Navbar({ algorithm, setAlgorithm }) {
                 &nbsp;<span>Visualizer</span>
               </NavLink>
             </div>
-            {/* <div className="flex gap-10 rounded-md text-[15px]">
+            <div className="flex gap-10 rounded-md text-[15px]">
               <NavLink
                 className="flex items-center hover:text-blue-600 "
                 to="/Chat"
@@ -119,7 +120,7 @@ function Navbar({ algorithm, setAlgorithm }) {
                 <Activity />
                 &nbsp;<span>Chat</span>
               </NavLink>
-            </div> */}
+            </div>
 
             <NavLink
               className="rounded-md p-1 border text-[15px] flex items-center text-blue-500 hover:text-blue-400"
