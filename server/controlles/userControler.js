@@ -72,31 +72,35 @@ const Login = async (req, res) => {
 };
 
 // feedback route
-const feedBackPost = async(req, res) => {
-  const userId= req.params.id;
-  const {feedback } = req.body;
+const feedBackPost = async (req, res) => {
+  const { feedback, gmail } = req.body;
 
   try {
-    const newFeedBack = await User.findById(userId);
-    if(!newFeedBack) {
-      return res.status(400).json({ error: 'User already exists.' });
-    } 
-    newFeedBack.feedback = feedback;
-    await newFeedBack.save();
-    res.status(201).json({ message: 'Feedback saved successfully.', feedback: newFeedBack });
+    const user = await User.findOne({ email: gmail });
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found." });
+    }
+
+    user.feedback = feedback; // assuming your User model has a 'feedback' field
+    await user.save();
+
+    res.status(201).json({
+      message: "Feedback saved successfully.",
+      feedback: user.feedback,
+    });
   } catch (error) {
-    res.status(500).json({ error: error.message});
-  }
+    res.status(500).json({ error: error.message });
+  }
 };
 
-const getRoute = async(req, res) => {
+const getRoute = async (req, res) => {
   try {
     const feedbacks = await User.find().sort({ createdAt: -1 });
     res.status(200).json(feedbacks);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch feedbacks.' });
-  }
-}
+    res.status(500).json({ error: "Failed to fetch feedbacks." });
+  }
+};
 
-
-export { registerUser, Login,feedBackPost, getRoute  };
+export { registerUser, Login, feedBackPost, getRoute };

@@ -8,6 +8,6 @@ import {feedBackPost,getRoute} from "../controlles/userControler.js"
 route.post("/register", registerUser);
 route.post("/login", Login);
 
-route.post("/feedback/:id", feedBackPost);
+route.post("/feedback", feedBackPost);
 route.get("/getRoute", getRoute);
 export default route;

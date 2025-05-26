@@ -41,7 +41,7 @@ function Loginform() {
         }
       );
       //console.log(respones.data);
-      
+
       if (respones.data.success === "success") {
         navigate(`/Visualizer/${respones.data.user?._id}`);
       }
@@ -100,6 +100,10 @@ function Loginform() {
             />
           </div>
         </form>
+
+        <a href="/signUp">
+          <span>new Here??</span>SingUp
+        </a>
       </motion.div>
     </motion.div>
   );

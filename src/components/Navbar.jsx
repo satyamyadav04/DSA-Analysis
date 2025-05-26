@@ -121,12 +121,21 @@ function Navbar({ algorithm, setAlgorithm }) {
                 &nbsp;<span>Chat</span>
               </NavLink>
             </div>
+            <div className="flex gap-10 rounded-md text-[15px]">
+              <NavLink
+                className="flex items-center hover:text-blue-600 "
+                to="/Feedback"
+              >
+                <Activity />
+                &nbsp;<span>Chat</span>
+              </NavLink>
+            </div>
 
             <NavLink
               className="rounded-md p-1 border text-[15px] flex items-center text-blue-500 hover:text-blue-400"
-              to="/signUp"
+              to="/Login"
             >
-              <span>SignUp</span>&nbsp;
+              <span>Login</span>&nbsp;
               <LogIn />
             </NavLink>
 
