@@ -71,4 +71,32 @@ const Login = async (req, res) => {
   }
 };
 
-export { registerUser, Login };
+// feedback route
+const feedBackPost = async(req, res) => {
+  const userId= req.params.id;
+  const {feedback } = req.body;
+
+  try {
+    const newFeedBack = await User.findById(userId);
+    if(!newFeedBack) {
+      return res.status(400).json({ error: 'User already exists.' });
+    } 
+    newFeedBack.feedback = feedback;
+    await newFeedBack.save();
+    res.status(201).json({ message: 'Feedback saved successfully.', feedback: newFeedBack });
+  } catch (error) {
+    res.status(500).json({ error: error.message});
+  }
+};
+
+const getRoute = async(req, res) => {
+  try {
+    const feedbacks = await User.find().sort({ createdAt: -1 });
+    res.status(200).json(feedbacks);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch feedbacks.' });
+  }
+}
+
+
+export { registerUser, Login,feedBackPost, getRoute  };

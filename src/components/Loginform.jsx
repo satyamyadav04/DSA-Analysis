@@ -40,8 +40,10 @@ function Loginform() {
           password: user.password,
         }
       );
+      //console.log(respones.data);
+      
       if (respones.data.success === "success") {
-        navigate("/Visualizer");
+        navigate(`/Visualizer/${respones.data.user?._id}`);
       }
       if (respones.data.success === "failure") {
         console.log(respones.data.message);

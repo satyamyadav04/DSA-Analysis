@@ -21,6 +21,32 @@ function Home({setAlgorithm}) {
   const ref = useRef(null);
   const isInView = useInView(ref);
 
+const [feeback, setFeedback] = useState("");
+
+const handleOnchange = (e) => {
+  setFeedback(e.target.value);
+};
+const id = req.params;
+const handleSubmitFeedBack =  async(e)=>{
+  e.preventDefault();
+  try {
+    const response = await axios.post(`http://localhost:5000/api/auth/feedback/${id}`, {
+    feedback: e.target.value})
+    console.log(response.data);
+    
+    if(response.status === 200){
+      alert("Feedback submitted successfully");
+      window.location.reload();
+    } else {
+      alert("Failed to submit feedback");
+    }
+  }
+  catch(error) {
+    console.error("Error submitting feedback:", error);
+    alert("An error occurred while submitting feedback");
+  }
+}
+
   useEffect(() => {
     animate(color, Colors, {
       ease: easeInOut,
@@ -752,7 +778,7 @@ function Home({setAlgorithm}) {
                         <input type="text" className='h-[2.5rem] outline-none shadow shadow-pink-800 text-gray-500 w-full rounded-md p-4' placeholder='Your Name' />
                         <input type="email" className='h-[2.5rem] outline-none shadow  shadow-pink-800  text-gray-500 w-full rounded-md p-4' placeholder='Your Email' />
                         <textarea name="" id="" cols="20" rows="5" placeholder='Your Feedback' className='w-full text-gray-500 p-4 outline-none shadow shadow-pink-800 rounded-md'></textarea>
-                        <input type="submit" value='Submit' className='cursor-pointer p-2 rounded-2xl text-white text-xl w-[50%] md:w-[30%] shadow-amber-100 shadow' />
+                        <button type="submit" onSubmit={handleSubmitFeedBack} className='cursor-pointer p-2 rounded-2xl text-white text-xl w-[50%] md:w-[30%] shadow-amber-100 shadow' />
                       </div>
                     </form>
                   </div>

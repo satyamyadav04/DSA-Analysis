@@ -7,6 +7,7 @@ import { useState } from "react";
 import SignUp from "./components/SignUp";
 // import Infd from "./Infd";
 import Chat from "./Chat";
+import Feedback from "./components/feedback";
 function App() {
   const [algorithm, setAlgorithm] = useState([]);
 
@@ -17,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home setAlgorithm={setAlgorithm} />} />
         <Route
-          path="/Visualizer"
+          path="/Visualizer/:id"
           element={
             <Visualizer algorithm={algorithm} setAlgorithm={setAlgorithm} />
           }
@@ -26,6 +27,7 @@ function App() {
         <Route path="/SignUp" element={<SignUp />} />
         {/* <Route path="/Ind" element={<Infd />} /> */}
         <Route path="/Chat" element={<Chat />} />
+        <Route path="/Feedback" element={<Feedback />} />
       </Routes>
     </div>
   );
