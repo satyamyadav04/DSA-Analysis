@@ -5,7 +5,7 @@ import connect from "./dbConfig/dbConfig.js";
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://statuesque-otter-b6848b.netlify.app",
     methods: ["GET", "POST"],
   })
 );
